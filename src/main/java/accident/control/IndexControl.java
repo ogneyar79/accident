@@ -12,5 +12,5 @@ public class IndexControl {
     public String index(Model model) {
         return "index";
     }
-    
+
 }
