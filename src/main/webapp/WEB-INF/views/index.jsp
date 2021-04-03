@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Car Accidents</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -20,26 +20,21 @@
     <table class="table table-dark">
         <thead>
         <tr>
-            <th>Firstname ID</th>
-            <th>Lastname NAME</th>
-            <th>Email TEXT</th>
-            <th>Email ADDRESS</th>
+            <th> ID</th>
+            <th> NAME </th>
+            <th> TEXT </th>
+            <th> ADDRESS </th>
         </tr>
+        <c:forEach items="${list}" var="item">
+            <tr>
+                <td> ${item.id}</td>
+                <td> ${item.name}</td>
+                <td> ${item.text}</td>
+                <td> ${item.address}</td>
+            </tr>
+        </c:forEach>
         </thead>
-        <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>john@example.com</td>
-        </tr>
-        <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-            <td>john@example.com</td>
-        </tr>
-        </tbody>
+        <tbody id="table"></tbody>
     </table>
 </div>
 </body>

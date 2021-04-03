@@ -4,6 +4,8 @@ import accident.model.Accident;
 import accident.repository.AccidentMem;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 public class AccidentService {
 
@@ -27,6 +29,11 @@ public class AccidentService {
             return true;
         }
         return false;
+    }
+
+    public Collection<Accident> findAccidents() {
+        return this.store.getAccidents().values();
+
     }
 
     public Accident remove(Accident accident) {
