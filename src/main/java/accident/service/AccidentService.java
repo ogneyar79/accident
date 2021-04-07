@@ -5,11 +5,14 @@ import accident.repository.AccidentMem;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class AccidentService {
 
     public final AccidentMem store;
+
+    private AtomicInteger countAccident = new AtomicInteger(0);
 
     public AccidentService(AccidentMem store) {
         this.store = store;
@@ -19,6 +22,7 @@ public class AccidentService {
         if (store.getAccidents().containsKey(accident.getId())) {
             return false;
         }
+        accident.setId(countAccident.incrementAndGet());
         store.getAccidents().put(accident.getId(), accident);
         return true;
     }

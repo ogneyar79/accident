@@ -8,8 +8,6 @@ import java.util.Objects;
 @Component
 public class Accident {
 
-    private int countAccident = 0;
-
     private int id;
     private String name;
     private String text;
@@ -19,7 +17,7 @@ public class Accident {
     }
 
     public Accident(String name, String text, String address) {
-        this.id = ++countAccident;
+        this.id = 0;
         this.name = name;
         this.text = text;
         this.address = address;
@@ -41,16 +39,20 @@ public class Accident {
         return address;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Accident accident = (Accident) o;
-        return countAccident == accident.countAccident && id == accident.id && Objects.equals(name, accident.name) && Objects.equals(text, accident.text) && Objects.equals(address, accident.address);
+        return id == accident.id && Objects.equals(name, accident.name) && Objects.equals(text, accident.text) && Objects.equals(address, accident.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(countAccident, id, name, text, address);
+        return Objects.hash(id, name, text, address);
     }
 }

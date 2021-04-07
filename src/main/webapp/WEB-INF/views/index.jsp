@@ -13,7 +13,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div style="text-align: center">
+    <a href="<c:url value='/create'/>">Добавить инцидент</a>
+</div>
 <div class="container">
     <h2>Black/Dark Table</h2>
     <p>The .table-dark class adds a black background to the table:</p>
