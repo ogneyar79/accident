@@ -29,4 +29,16 @@ public class AccidentControl {
         return "redirect:/";
     }
 
+    @GetMapping("/edit")
+    public String correctAccident() {
+        return "accident/edit";
+    }
+
+    @PostMapping("/update")
+    public String updateAccident(@RequestParam String number, @RequestParam String nombre, @RequestParam String desc, @RequestParam String location, Model model) {
+        Accident accident = new Accident(nombre, desc, location);
+        accident.setId(Integer.parseInt(number));
+        service.update(accident);
+        return "redirect:/";
+    }
 }
