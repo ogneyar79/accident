@@ -74,17 +74,19 @@
 <body>
 <form action="<c:url value='/save'/>" method='post' class="accident">
     <div class="form-row">
-        <label for="name">Accident name</label><input type="text" name="nombre" placeholder="Введите название эсцидента"
-                                                      id="name" required>
+        <label for="nombre">Accident name</label><input type="text" name="nombre"
+                                                        placeholder="Введите название эсцидента"
+                                                        id="nombre" required>
     </div>
     <div class="form-row">
-        <label for="description">Accident description</label><input type="text" name="desc"
-                                                                    placeholder="Введите описание происшествия "
-                                                                    id="description" required>
+        <label for="desc">Accident description</label><input type="text" name="desc"
+                                                             placeholder="Введите описание происшествия "
+                                                             id="desc" required>
     </div>
     <div class="form-row">
-        <label for="address">Address</label>
-        <textarea rows="5" name="location" placeholder="Введите место происшествия" id="address" required></textarea>
+        <label for="location">Address</label>
+        <textarea rows="5" name="location" placeholder="Введите место происшествия"
+                  id="location" required></textarea>
     </div>
     <div class="form-row">
         <input name="submit" type="submit" value="Сохранить"/>

@@ -18,6 +18,7 @@ public class IndexControl {
 
     @GetMapping("/")
     public String index(Model model) {
+        System.out.println(" IndexController");
         this.service.add(new Accident("First", " Try Understand Spring", "Moscow"));
         model.addAttribute("list", service.findAccidents());
         return "index";

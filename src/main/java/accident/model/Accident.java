@@ -9,38 +9,50 @@ import java.util.Objects;
 public class Accident {
 
     private int id;
-    private String name;
-    private String text;
-    private String address;
+    private String nombre;
+    private String desc;
+    private String location;
 
     public Accident() {
     }
 
-    public Accident(String name, String text, String address) {
+    public Accident(String nombre, String desc, String location) {
         this.id = 0;
-        this.name = name;
-        this.text = text;
-        this.address = address;
+        this.nombre = nombre;
+        this.desc = desc;
+        this.location = location;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getText() {
-        return text;
+    public String getDesc() {
+        return desc;
     }
 
-    public String getAddress() {
-        return address;
+    public String getLocation() {
+        return location;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
@@ -48,11 +60,12 @@ public class Accident {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Accident accident = (Accident) o;
-        return id == accident.id && Objects.equals(name, accident.name) && Objects.equals(text, accident.text) && Objects.equals(address, accident.address);
+        return id == accident.id && Objects.equals(nombre, accident.nombre) && Objects.equals(desc, accident.desc) && Objects.equals(location, accident.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, text, address);
+        return Objects.hash(id, nombre, desc, location);
     }
+
 }

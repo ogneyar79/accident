@@ -72,25 +72,23 @@
     </style>
 </head>
 <body>
-<form action="<c:url value='/update'/>" method='post' class="accident">
-    <div class="form-row">
-        <label for="number">Accident number</label><input type="text" name="number"
-                                                          placeholder="Введите номер происшествия, который необходимо исправить"
-                                                          id="number" required>
-    </div>
+<h1> Редактирование Происшествия</h1>
+<form action="<c:url value='/update?id=${accident.id}'/>" method='post' class="accident">
 
     <div class="form-row">
-        <label for="name">Accident name</label><input type="text" name="nombre" placeholder="Введите название эсцидента"
+        <label for="name">Accident name</label><input type="text" name="nombre" value="${accident.nombre}"
+                                                      placeholder="Введите название эсцидента"
                                                       id="name">
     </div>
     <div class="form-row">
-        <label for="description">Accident description</label><input type="text" name="desc"
+        <label for="description">Accident description</label><input type="text" value="${accident.desc}" name="desc"
                                                                     placeholder="Введите описание происшествия "
                                                                     id="description">
     </div>
     <div class="form-row">
-        <label for="address">Address</label>
-        <textarea rows="5" name="location" placeholder="Введите место происшествия" id="address"></textarea>
+        <label for="location">Address</label>
+        <textarea rows="5" name="location" placeholder="Введите место происшествия"
+                  id="location" required>${accident.location}</textarea>
     </div>
     <div class="form-row">
         <input name="submit" type="submit" value="Сохранить"/>

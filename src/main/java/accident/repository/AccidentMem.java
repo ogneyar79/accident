@@ -10,7 +10,6 @@ public class AccidentMem {
 
     private final HashMap<Integer, Accident> accidents = new HashMap<>();
 
-
     public HashMap<Integer, Accident> getAccidents() {
         return accidents;
     }

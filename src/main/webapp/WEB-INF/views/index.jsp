@@ -15,7 +15,7 @@
 <body>
 <div style="text-align: center">
     <a href="<c:url value='/create'/>">Добавить инцидент</a><br>
-    <a href="<c:url value='/edit'/>">Редактировать инцидент</a>
+
 </div>
 <div class="container">
     <h2>Black/Dark Table</h2>
@@ -27,13 +27,15 @@
             <th> NAME</th>
             <th> TEXT</th>
             <th> ADDRESS</th>
+            <th></th>
         </tr>
         <c:forEach items="${list}" var="item">
             <tr>
                 <td> ${item.id}</td>
-                <td> ${item.name}</td>
-                <td> ${item.text}</td>
-                <td> ${item.address}</td>
+                <td> ${item.nombre}</td>
+                <td> ${item.desc}</td>
+                <td> ${item.location}</td>
+                <td><a href="<c:url value='/edit?id=${item.id}'/>">Редактировать инцидент</a></td>
             </tr>
         </c:forEach>
         </thead>
