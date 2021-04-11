@@ -12,6 +12,7 @@ public class IndexControl {
 
     private final AccidentService service;
 
+
     public IndexControl(AccidentService service) {
         this.service = service;
     }
