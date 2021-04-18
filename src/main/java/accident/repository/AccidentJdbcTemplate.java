@@ -2,11 +2,10 @@ package accident.repository;
 
 import accident.model.Accident;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+//@Repository
 public class AccidentJdbcTemplate {
 
     private final JdbcTemplate jdbc;

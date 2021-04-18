@@ -1,14 +1,16 @@
 package accident.model;
 
 
-import org.springframework.stereotype.Component;
-
+import javax.persistence.*;
 import java.util.Objects;
 
-@Component
+@Entity
+@Table(name = "accident")
 public class Accident {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String nombre;
     private String desc;
     private String location;
@@ -23,7 +25,7 @@ public class Accident {
         this.location = location;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -39,7 +41,7 @@ public class Accident {
         return location;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -67,5 +69,4 @@ public class Accident {
     public int hashCode() {
         return Objects.hash(id, nombre, desc, location);
     }
-
 }

@@ -1,7 +1,7 @@
 package accident.service;
 
 import accident.model.Accident;
-import accident.repository.AccidentMem;
+import accident.repository.AccidentHibernate;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -10,42 +10,35 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class AccidentService {
 
-    public final AccidentMem store;
+    public final AccidentHibernate store;
 
     private AtomicInteger countAccident = new AtomicInteger(0);
 
-    public AccidentService(AccidentMem store) {
+    public AccidentService(AccidentHibernate store) {
         this.store = store;
     }
 
     public boolean add(Accident accident) {
-        if (store.getAccidents().containsKey(accident.getId())) {
+        Accident accident1 = this.store.add(accident);
+        if (!this.store.add(accident).getLocation().equals(accident.getLocation())) {
             return false;
         }
-        accident.setId(countAccident.incrementAndGet());
-        store.getAccidents().put(accident.getId(), accident);
         return true;
     }
 
     public boolean update(Accident accident) {
-        if (store.getAccidents().containsKey(accident.getId())) {
-            store.getAccidents().put(accident.getId(), accident);
-            return true;
-        }
-        return false;
+        return this.store.update(accident);
     }
 
     public Collection<Accident> findAccidents() {
-        return this.store.getAccidents().values();
-
+        return this.store.findAccidents();
     }
 
     public Accident remove(Accident accident) {
-        return store.getAccidents().remove(accident.getId());
+        return store.remove(accident.getId());
     }
 
     public Accident getById(int id) {
-        return store.getAccidents().containsKey(id) ? store.getAccidents().get(id)
-                : new Accident("zero", "Zero", "@zero");
+        return store.getById(id);
     }
 }
