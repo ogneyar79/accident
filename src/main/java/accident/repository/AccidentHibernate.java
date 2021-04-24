@@ -3,10 +3,12 @@ package accident.repository;
 import accident.model.Accident;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.List;
 
+@Repository
 public class AccidentHibernate {
 
     private final SessionFactory sf;
