@@ -20,6 +20,9 @@
 <div class="container">
     <h2>Black/Dark Table</h2>
     <p>The .table-dark class adds a black background to the table:</p>
+    <div>
+        Login as : ${user.username}
+    </div>
     <table class="table table-dark">
         <thead>
         <tr>

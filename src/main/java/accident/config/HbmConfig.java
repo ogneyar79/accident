@@ -50,6 +50,4 @@ public class HbmConfig {
         tx.setSessionFactory(sf);
         return tx;
     }
-
-
 }

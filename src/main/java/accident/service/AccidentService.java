@@ -2,12 +2,11 @@ package accident.service;
 
 import accident.model.Accident;
 import accident.repository.AccidentHibernate;
-import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Service
+//@Service
 public class AccidentService {
 
     public final AccidentHibernate store;
@@ -17,7 +16,6 @@ public class AccidentService {
     public AccidentService(AccidentHibernate store) {
         this.store = store;
     }
-
     public boolean add(Accident accident) {
         Accident accident1 = this.store.add(accident);
         if (!this.store.add(accident).getLocation().equals(accident.getLocation())) {

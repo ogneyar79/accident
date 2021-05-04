@@ -2,7 +2,7 @@ package accident.control;
 
 
 import accident.model.Accident;
-import accident.service.AccidentService;
+import accident.service.AccidentTemplateS;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AccidentControl {
-    private final AccidentService service;
+    private final AccidentTemplateS service;
 
-    public AccidentControl(AccidentService service) {
+    public AccidentControl(AccidentTemplateS service) {
         this.service = service;
     }
 
@@ -62,9 +62,7 @@ public class AccidentControl {
         System.out.println(" Accident Location :" + accident.getLocation());
         accident.setId(Integer.parseInt(id));
         System.out.println(" Accident Location 62 :" + accident.getLocation());
-        service.update(accident);
+        service.update(Integer.parseInt(id), accident);
         return "redirect:/";
     }
-
-
 }
