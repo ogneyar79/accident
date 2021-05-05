@@ -31,4 +31,4 @@ public class main {
 
 
 5.
- ![IMAGE](src/main/resources/Screenshot_1.png "Описание будет тут")
+ ![IMAGE](src/main/resources/Screenshot_1.png "Picture from hard disk")
