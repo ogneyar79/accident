@@ -25,4 +25,8 @@ public class main {
 
    3.1 [link](https://images.app.goo.gl/SVHcQCG4wi73sMpW6)
 
-4 ![](C:\Users\Администратор\Pictures\Saved Pictures\Screenshot_1)
+4. ![IMAGE] (/C:/Users/Администратор/Pictures/Saved Pictures/Screenshot_1)
+
+
+   
+5. <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/e2/93/56/e29356f6-a7a5-0aa3-0969-1c2be8630815/AppIcon-1x_U007emarketing-85-220-0-7.png/246x0w.jpg" />
