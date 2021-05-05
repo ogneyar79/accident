@@ -38,14 +38,17 @@ public class AccidentJdbcTemplate {
     }
 
     public List<Accident> findAccidents() {
-        return jdbc.query("select id, name from accident",
+        return jdbc.query("select id, nombre, description, address from accident",
                 (rs, row) -> {
                     Accident accident = new Accident();
                     accident.setId(rs.getInt("id"));
-                    accident.setNombre(rs.getString("name"));
+                    accident.setNombre(rs.getString("nombre"));
+                    accident.setDesc("description");
+                    accident.setLocation("address");
                     return accident;
                 });
     }
+
     public void update(int id, Accident accident) {
         this.jdbc.update("update accident set nombre=? where id=?", accident.getNombre(), id);
     }

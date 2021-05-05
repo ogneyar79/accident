@@ -2,6 +2,7 @@ package accident.service;
 
 import accident.model.Accident;
 import accident.repository.AccidentJdbcTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,10 +11,12 @@ import java.util.List;
 @Service
 public class AccidentTemplateS {
 
+    @Autowired
     private AccidentJdbcTemplate store;
 
     public AccidentTemplateS() {
     }
+
 
     public AccidentTemplateS(AccidentJdbcTemplate store) {
         this.store = store;
