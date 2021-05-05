@@ -5,8 +5,11 @@ Here I use `Hibernate` and ~~JDBC~~.
 I _apply_ __SPRING__ FRAMEWORK ***SECURITY***.
 1.
    1.1  some text[link](https://job4j.ru)
-     -a ![markdown logo](https://images.app.goo.gl/r7VjL5dSJC5Q9pT49)
+   ___
+     -a [markdown logo](https://images.app.goo.gl/r7VjL5dSJC5Q9pT49)
+   ___
 2.   [link](./README.md)
+            2.1 [link](https://images.app.goo.gl/SVHcQCG4wi73sMpW6)
 
 ```
 3. MARKDOWN OPPORTUNITY
